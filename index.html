@@ -2,33 +2,57 @@
 layout: default
 ---
 
-<div class="main-post-list hidden">
-
-  <ol class="post-list">
-    {% for post in paginator.posts %}
-    <li>
-      <h2 class="post-list__post-title post-title"><a href="{{ post.url }}" title="访问 {{ post.title }}">{{ post.title }}</a></h2>
-      <p class="excerpt">{{ post.content | strip_html | strip_newlines | truncate: 250 }}&hellip;</p>
-      <div class="post-list__meta">        
-        <time datetime="{{post.date | date: date_to_xmlschema}}" class="post-list__meta--date date">
-          <img src="/images/calendar.png" width="20px" /> 
-          {{ post.date | date: "%F"}}</time> 
-        <div class = "tag-img-icon">
-          <img src="/images/tag-icon.svg" width="20px" /> 
-        </div>
-        <a href="/tags">
-          <div class = "post-list-icon-mate">
-            <span class="post-list__meta--tags-right">{{ post.tags }}</span>
-          </div>
-          <div class = "post-list-small-mate">
-          <a class="btn-border-small" href={{ post.url }}>阅读全文 » </a>
-          </div>
+<div class="awen-page" id="blog">
+  <section class="profile-panel" aria-labelledby="home-title">
+    <img class="profile-panel__avatar" src="/images/avatar.jpg" alt="{{ site.title }}" />
+    <div class="profile-panel__body">
+      <p class="profile-panel__eyebrow">Hey, I'm</p>
+      <h1 id="home-title">{{ site.title }}</h1>
+      <p class="profile-panel__intro">
+        这里记录 AI Agent、RAG、工程实践和一些长期思考。写给未来的自己，也写给同样在把想法落到代码里的人。
+      </p>
+      <div class="profile-panel__meta">
+        <a href="https://github.com/yangs08" target="_blank" rel="noreferrer">GitHub</a>
+        <a href="/feed.xml">RSS</a>
+        <a href="/archive">Archive</a>
       </div>
-      <hr class="post-list__divider" />
-    </li>
-    {% endfor %}
-  </ol>
+    </div>
+  </section>
 
-  {% include pagination.html %}
+  <a class="search-entry" href="/archive" aria-label="搜索文章">
+    <span>Search articles...</span>
+    <kbd>/</kbd>
+  </a>
 
+  <section class="content-block" aria-labelledby="latest-posts">
+    <div class="content-block__header">
+      <h2 id="latest-posts">Latest from blog</h2>
+      <a href="/archive">View all</a>
+    </div>
+
+    <ol class="awen-list">
+      {% for post in paginator.posts limit: 5 %}
+      <li>
+        <a class="awen-list__link" href="{{ post.url }}" title="访问 {{ post.title }}">
+          <span class="awen-list__title">{{ post.title }}</span>
+          <time datetime="{{post.date | date: date_to_xmlschema}}">{{ post.date | date: "%b %-d, %Y" }}</time>
+        </a>
+        <p>{{ post.content | strip_html | strip_newlines | truncate: 118 }}</p>
+      </li>
+      {% endfor %}
+    </ol>
+  </section>
+
+  <section class="content-block" id="projects" aria-labelledby="projects-title">
+    <div class="content-block__header">
+      <h2 id="projects-title">Projects</h2>
+      <a href="https://github.com/yangs08" target="_blank" rel="noreferrer">GitHub</a>
+    </div>
+    <div class="project-list">
+      <a href="https://github.com/yangs08" target="_blank" rel="noreferrer">
+        <strong>yangs08 on GitHub</strong>
+        <span>这里汇总我的开源项目、Agent 实验和工程实践代码。</span>
+      </a>
+    </div>
+  </section>
 </div>

@@ -28,16 +28,13 @@ social:
 #    mail: xxx
 
 
-# 百度统计 
-# 使用博客模板请去掉或者更换 id 
+# 百度统计；留空则禁用
 baidu:
     id: 3b5656135fa13a98496d4bfd93a0ea42
 
-# Google Analytics
-# 使用博客模板请去掉或者更换 id
+# Google Analytics 4；留空则禁用
 ga:
     id: G-PTKFWCZT8E
-    host: auto  
 
 
 permalink: /:year/:month/:title/
@@ -65,5 +62,4 @@ nav:
 plugins: [jekyll-paginate,jekyll-sitemap]
 paginate: 20
 paginate_path: "page/:num/"
-
 
