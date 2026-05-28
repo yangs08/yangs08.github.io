@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="420" viewBox="0 0 960 420" role="img" aria-labelledby="title desc">
+  <title id="title">一次对话请求的结构</title>
+  <desc id="desc">用户输入、历史消息和系统规则被放进 messages 数组，大模型读完后输出回复。</desc>
+  <rect width="960" height="420" rx="24" fill="#f8f7f4"/>
+  <rect x="50" y="52" width="230" height="88" rx="16" fill="#ffffff" stroke="#ded8ce"/>
+  <text x="165" y="89" text-anchor="middle" font-family="Arial, 'PingFang SC', sans-serif" font-size="22" font-weight="700" fill="#20201d">用户输入</text>
+  <text x="165" y="119" text-anchor="middle" font-family="Arial, 'PingFang SC', sans-serif" font-size="15" fill="#706c64">今天要问什么</text>
+  <rect x="50" y="166" width="230" height="88" rx="16" fill="#ffffff" stroke="#ded8ce"/>
+  <text x="165" y="203" text-anchor="middle" font-family="Arial, 'PingFang SC', sans-serif" font-size="22" font-weight="700" fill="#20201d">历史消息</text>
+  <text x="165" y="233" text-anchor="middle" font-family="Arial, 'PingFang SC', sans-serif" font-size="15" fill="#706c64">前面聊过什么</text>
+  <rect x="50" y="280" width="230" height="88" rx="16" fill="#ffffff" stroke="#ded8ce"/>
+  <text x="165" y="317" text-anchor="middle" font-family="Arial, 'PingFang SC', sans-serif" font-size="22" font-weight="700" fill="#20201d">系统规则</text>
+  <text x="165" y="347" text-anchor="middle" font-family="Arial, 'PingFang SC', sans-serif" font-size="15" fill="#706c64">角色、边界、格式</text>
+  <path d="M300 96 H385" stroke="#8f4d2f" stroke-width="4" stroke-linecap="round"/>
+  <path d="M300 210 H385" stroke="#8f4d2f" stroke-width="4" stroke-linecap="round"/>
+  <path d="M300 324 H385" stroke="#8f4d2f" stroke-width="4" stroke-linecap="round"/>
+  <path d="M378 86 L398 96 L378 106" fill="none" stroke="#8f4d2f" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M378 200 L398 210 L378 220" fill="none" stroke="#8f4d2f" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M378 314 L398 324 L378 334" fill="none" stroke="#8f4d2f" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="415" y="78" width="220" height="264" rx="20" fill="#fff8ef" stroke="#d2bda9"/>
+  <text x="525" y="128" text-anchor="middle" font-family="Arial, 'PingFang SC', sans-serif" font-size="26" font-weight="800" fill="#20201d">messages 数组</text>
+  <text x="525" y="176" text-anchor="middle" font-family="Arial, 'PingFang SC', sans-serif" font-size="17" fill="#706c64">system</text>
+  <text x="525" y="214" text-anchor="middle" font-family="Arial, 'PingFang SC', sans-serif" font-size="17" fill="#706c64">user</text>
+  <text x="525" y="252" text-anchor="middle" font-family="Arial, 'PingFang SC', sans-serif" font-size="17" fill="#706c64">assistant</text>
+  <text x="525" y="290" text-anchor="middle" font-family="Arial, 'PingFang SC', sans-serif" font-size="17" fill="#706c64">更多上下文</text>
+  <path d="M654 210 H735" stroke="#8f4d2f" stroke-width="4" stroke-linecap="round"/>
+  <path d="M728 200 L748 210 L728 220" fill="none" stroke="#8f4d2f" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="765" y="122" width="145" height="176" rx="20" fill="#ffffff" stroke="#ded8ce"/>
+  <text x="837" y="188" text-anchor="middle" font-family="Arial, 'PingFang SC', sans-serif" font-size="24" font-weight="800" fill="#20201d">大模型</text>
+  <text x="837" y="223" text-anchor="middle" font-family="Arial, 'PingFang SC', sans-serif" font-size="16" fill="#706c64">读完后</text>
+  <text x="837" y="249" text-anchor="middle" font-family="Arial, 'PingFang SC', sans-serif" font-size="16" fill="#706c64">继续写</text>
+</svg>
