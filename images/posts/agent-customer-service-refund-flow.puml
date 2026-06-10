@@ -1,0 +1,31 @@
+@startuml
+skinparam shadowing false
+skinparam defaultTextAlignment center
+skinparam backgroundColor white
+
+start
+:主客服 Agent 接收用户请求;
+:Orchestrator 初始化 State;
+
+fork
+  :订单 Agent\n查询订单状态;
+fork again
+  :物流 Agent\n查询物流轨迹;
+end fork
+
+:写入 Shared State;
+:售后规则 Agent\n读取订单 + 物流结果\n判断退款资格;
+:风控 Agent\n判断是否允许自动处理;
+:主客服 Agent 汇总 State;
+
+if (是否可自动退款?) then (是)
+  :调用退款工具;
+elseif (是否需要人工审核?) then (是)
+  :创建物流异常/退款审核工单;
+else (缺信息)
+  :追问用户补充材料;
+endif
+
+:回复用户;
+stop
+@enduml

@@ -1,0 +1,55 @@
+@startuml
+skinparam componentStyle rectangle
+skinparam shadowing false
+skinparam defaultTextAlignment center
+skinparam backgroundColor white
+
+actor 用户
+
+rectangle "用户交互层" {
+  component "主客服 Agent\n唯一对话出口" as MainAgent
+}
+
+rectangle "编排层" {
+  component "Orchestrator\n拆任务 / 派任务 / 收结果 / 决策" as Orchestrator
+}
+
+database "Shared State\n订单状态 / 物流状态 / 售后判断 / 风险等级 / 下一步动作" as State
+
+rectangle "专业 Agent 层" {
+  component "订单 Agent" as OrderAgent
+  component "物流 Agent" as LogisticsAgent
+  component "售后规则 Agent" as RefundAgent
+  component "风控 Agent" as RiskAgent
+}
+
+rectangle "业务系统层" {
+  component "订单系统" as OrderSystem
+  component "物流系统" as LogisticsSystem
+  component "售后规则库" as RefundRules
+  component "风控系统" as RiskSystem
+  component "工单/退款系统" as TicketSystem
+}
+
+用户 --> MainAgent
+MainAgent --> Orchestrator
+Orchestrator --> OrderAgent
+Orchestrator --> LogisticsAgent
+Orchestrator --> RefundAgent
+Orchestrator --> RiskAgent
+
+OrderAgent --> OrderSystem
+LogisticsAgent --> LogisticsSystem
+RefundAgent --> RefundRules
+RiskAgent --> RiskSystem
+
+OrderAgent --> State
+LogisticsAgent --> State
+RefundAgent --> State
+RiskAgent --> State
+
+State --> Orchestrator
+Orchestrator --> TicketSystem
+Orchestrator --> MainAgent
+MainAgent --> 用户
+@enduml

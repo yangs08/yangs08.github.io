@@ -31,7 +31,8 @@ layout: default
     </div>
 
     <ol class="awen-list">
-      {% for post in paginator.posts limit: 5 %}
+      {% assign visible_posts = site.posts | where_exp: "post", "post.hidden != true" %}
+      {% for post in visible_posts limit: 5 %}
       <li>
         <a class="awen-list__link" href="{{ post.url }}" title="访问 {{ post.title }}">
           <span class="awen-list__title">{{ post.title }}</span>
@@ -40,6 +41,7 @@ layout: default
         <p>{{ post.content | strip_html | strip_newlines | truncate: 118 }}</p>
       </li>
       {% endfor %}
+      {% assign visible_posts = nil %}
     </ol>
   </section>
 
