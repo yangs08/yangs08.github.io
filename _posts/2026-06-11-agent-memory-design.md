@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 在做 Agent 应用时的思考（二）：记忆不是把聊天记录塞满
-date: 2026-06-11 09:00:00 +0800
+date: 2026-06-11 10:00:00 +0800
 tags: AI Agent 记忆 RAG
 ---
 
